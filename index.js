@@ -40,7 +40,7 @@ function driversByName(array) {
 //   return revenue;
 //   // totalRevenue() — Receives an array of driver objects and returns the sum of the revenue earned by each driver.
 // }
-function totalRevenue(array) {
+const totalRevenue = function (array) {
   return array.reduce(function (total, driver){
     return total + driver.revenue;
   }, 0);
@@ -58,7 +58,7 @@ function totalRevenue(array) {
 // }
 
 function averageRevenue(array) {
-  let totalRevenue = totalRevenue(array);
-  return (totalRevenue/array.length);
+  let total = totalRevenue(array);
+  return (total/array.length);
   // averageRevenue() — Receives an array of driver objects and returns the average revenue earned by each driver.
 }
