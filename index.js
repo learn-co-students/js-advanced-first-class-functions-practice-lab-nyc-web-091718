@@ -32,22 +32,33 @@ function driversByName(array) {
   // driversByName() — Receives an array of driver objects and returns a new array of driver objects sorted by their name attribute from A to Z. Here, you may have to use the String.prototype.localeCompare() method.
 }
 
+// function totalRevenue(array) {
+//   let revenue = 0;
+//   array.forEach(function (driver){
+//     revenue += driver.revenue;
+//   });
+//   return revenue;
+//   // totalRevenue() — Receives an array of driver objects and returns the sum of the revenue earned by each driver.
+// }
 function totalRevenue(array) {
-  let revenue = 0;
-  array.forEach(function (driver){
-    revenue += driver.revenue;
-  });
-  return revenue;
-  // totalRevenue() — Receives an array of driver objects and returns the sum of the revenue earned by each driver.
+  return array.reduce(function (total, driver){
+    return total + driver.revenue;
+  }, 0);
 }
 
+// function averageRevenue(array) {
+//   let totalRevenue = 0;
+//   let totalDrivers = 0;
+//   array.forEach(function (driver){
+//     totalRevenue += driver.revenue;
+//     totalDrivers += 1;
+//   });
+//   return (totalRevenue/totalDrivers);
+//   // averageRevenue() — Receives an array of driver objects and returns the average revenue earned by each driver.
+// }
+
 function averageRevenue(array) {
-  let totalRevenue = 0;
-  let totalDrivers = 0;
-  array.forEach(function (driver){
-    totalRevenue += driver.revenue;
-    totalDrivers += 1;
-  });
-  return (totalRevenue/totalDrivers);
+  let totalRevenue = totalRevenue(array);
+  return (totalRevenue/array.length);
   // averageRevenue() — Receives an array of driver objects and returns the average revenue earned by each driver.
 }
